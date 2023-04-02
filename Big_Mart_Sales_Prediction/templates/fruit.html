@@ -1,0 +1,775 @@
+<html>
+<head>
+    <title>Product</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#ff7800;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body{
+    background:#eee;
+}
+
+section{
+    padding:2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    padding:2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color:var(--black);
+}
+
+.heading span{
+    background: var(--orange);
+    color:#fff;
+    display: inline-block;
+    padding:.5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border:.2rem solid var(--black);
+    color:var(--black);
+    cursor: pointer;
+    background: none;
+}
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:#fff;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:var(--black);
+}
+
+.header .logo i{
+    color:var(--orange);
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:var(--black);
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header .search-form{
+    position: absolute;
+    top:110%; right:-110%;
+    width: 50rem;
+    height:5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header .search-form.active{
+    right:2rem;
+    transition: .4s linear;
+}
+
+.header .search-form input{
+    height:100%;
+    width:100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:0 1.5rem;
+}
+
+.header .search-form label{
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color:var(--black);
+    cursor: pointer;
+}
+
+.header .search-form label:hover{
+    color:var(--orange);
+}
+
+.header .shopping-cart{
+    position: absolute;
+    top:110%; right:-110%;
+    padding:1rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width:35rem;
+    background: #fff;
+}
+
+.header .shopping-cart.active{
+    right:2rem;
+    transition: .4s linear;
+}
+
+.header .shopping-cart .box{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    position: relative;
+    margin:1rem 0;
+}
+
+.header .shopping-cart .box img{
+    height:10rem;
+}
+
+.header .shopping-cart .box .fa-trash{
+    font-size: 2rem;
+    position: absolute;
+    top:50%; right:2rem;
+    cursor: pointer;
+    color:var(--light-color);
+    transform: translateY(-50%);
+}
+
+.header .shopping-cart .box .fa-trash:hover{
+    color:var(--orange);
+}
+
+.header .shopping-cart .box .content h3{
+    color:var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+
+.header .shopping-cart .box .content span{
+    color:var(--light-color);
+    font-size: 1.6rem;
+}
+
+.header .shopping-cart .box .content .quantity{
+    padding-left: 1rem;
+}
+
+.header .shopping-cart .total{
+    font-size: 2.5rem;
+    padding:1rem 0;
+    text-align: center;
+    color:var(--black);
+}
+
+.header .shopping-cart .btn{
+    display: block;
+    text-align: center;
+    margin:1rem;
+}
+
+.header .login-form{
+    position: absolute;
+    top:110%; right:-110%;
+    width:35rem;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+}
+
+.header .login-form.active{
+    right:2rem;
+    transition: .4s linear;
+}
+
+.header .login-form h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.header .login-form .box{
+    width: 100%;
+    margin:.7rem 0;
+    background:#eee;
+    border-radius: .5rem;
+    padding:1rem;
+    font-size: 1.6rem;
+    color:var(--black);
+    text-transform: none;
+}
+
+.header .login-form p{
+    font-size: 1.4rem;
+    padding:.5rem 0;
+    color:var(--light-color);
+}
+
+.header .login-form p a{
+    color:var(--orange);
+    text-decoration: underline;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../image/banner-bg.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+}
+
+.home .content{
+    text-align: center;
+    width:60rem;
+}
+
+.home .content h3{
+    color:var(--black);
+    font-size: 3rem;
+}
+
+.home .content h3 span{
+    color:var(--orange);
+}
+
+.home .content p{
+    color:var(--light-color);
+    font-size: 1.7rem;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+
+.features .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.features .box-container .box{
+    padding:3rem 2rem;
+    background: #fff;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.features .box-container .box:hover{
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.features .box-container .box img{
+    margin:1rem 0;
+    height: 15rem;
+}
+
+.features .box-container .box h3{
+    font-size: 2.5rem;
+    line-height: 1.8;
+    color:var(--black);
+}
+
+.features .box-container .box p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color:var(--light-color);
+    padding:1rem 0;
+}
+
+.products .product-slider{
+    padding:1rem;
+}
+
+.products .product-slider:first-child{
+    margin-bottom: 2rem;
+}
+
+.products .product-slider .box{
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding:3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+}
+
+.products .product-slider .box:hover{
+    outline-offset: 0rem;
+    outline: var(--outline-hover);
+}
+
+.products .product-slider .box img{
+    height:20rem;
+}
+
+.products .product-slider .box h3{
+    font-size: 2.5rem;
+    color:var(--black);
+}
+
+.products .product-slider .box .price{
+    font-size: 2rem;
+    color:var(--light-color);
+    padding:.5rem 0;
+}
+
+.products .product-slider .box .stars i{
+    font-size: 1.7rem;
+    color:var(--orange);
+    padding:.5rem 0;
+}
+
+.categories .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap:1.5rem;
+}
+
+.categories .box-container .box{
+    padding:3rem 2rem;
+    border-radius: .5rem;
+    background:#fff;
+    box-shadow: var(--box-shadow);
+    outline:var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+}
+
+.categories .box-container .box:hover{
+    outline:var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.categories .box-container .box img{
+    margin:1rem 0;
+    height:15rem;
+}
+
+.categories .box-container .box h3{
+   font-size: 2rem;
+   color:var(--black);
+   line-height: 1.8;
+}
+
+.categories .box-container .box p{
+    font-size: 1.7rem;
+    color:var(--light-color);
+    line-height: 1.8;
+    padding:1rem 0;
+}
+
+.review .review-slider{
+    padding:1rem;
+}
+
+.review .review-slider .box{
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding:3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+}
+
+.review .review-slider .box:hover{
+    outline:var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.review .review-slider .box img{
+    height:10rem;
+    width:10rem;
+    border-radius: 50%;
+}
+
+.review .review-slider .box p{
+    padding:1rem 0;
+    line-height: 1.8;
+    color:var(--light-color);
+    font-size: 1.5rem;
+}
+
+.review .review-slider .box h3{
+    padding-bottom: .5rem;
+    color:var(--black);
+    font-size: 2.2rem;
+}
+
+.review .review-slider .box .stars i{
+    color:var(--orange);
+    font-size: 1.7rem;
+}
+
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.blogs .box-container .box{
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background:#fff;
+}
+
+.blogs .box-container .box img{
+    height:25rem;
+    width:100%;
+    object-fit: cover;
+}
+
+.blogs .box-container .box .content{
+    padding:2rem;
+}
+
+.blogs .box-container .box .content .icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: var(--border);
+}
+
+.blogs .box-container .box .content .icons a{
+    color:var(--light-color);
+    font-size: 1.5rem;
+}
+
+.blogs .box-container .box .content .icons a:hover{
+    color:var(--black);
+}
+
+.blogs .box-container .box .content .icons a i{
+    color:var(--orange);
+    padding-right: .5rem;
+}
+
+.blogs .box-container .box .content h3{
+    line-height: 1.8;
+    color:var(--black);
+    font-size: 2.2rem;
+    padding:.5rem 0;
+}
+
+.blogs .box-container .box .content p{
+    line-height: 1.8;
+    color:var(--light-color);
+    font-size: 1.5rem;
+    padding:.5rem 0;
+}
+
+.footer{
+    background: #fff;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:var(--black);
+    padding:1rem 0;
+}
+
+.footer .box-container .box h3 i{
+    color:var(--orange);
+}
+
+.footer .box-container .box .links{
+    display: block;
+    font-size: 1.5rem;
+    color:var(--light-color);
+    padding:1rem 0;
+}
+
+.footer .box-container .box .links i{
+    color:var(--orange);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box .links:hover i{
+    padding-right: 2rem;
+}
+
+
+.footer .box-container .box p{
+    line-height: 1.8;
+    font-size: 1.5rem;
+    color:var(--light-color);
+    padding:1rem 0;
+}
+
+.footer .box-container .box .share a{
+    height:4rem;
+    width:4rem;
+    line-height:4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color:var(--black);
+    margin-right: .2rem;
+    background: #eee;
+    text-align: center;
+}
+
+.footer .box-container .box .share a:hover{
+    background: var(--orange);
+    color: #fff;
+}
+
+.footer .box-container .box .email{
+    width: 100%;
+    margin:.7rem 0;
+    padding:1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color:var(--black);
+    text-transform: none;
+}
+
+.footer .box-container .box .payment-img{
+    margin-top: 2rem;
+    height: 3rem;
+    display: block;
+}
+
+.footer .credit{
+    text-align: center;
+    margin-top: 2rem;
+    padding:1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color:var(--black);
+    border-top: var(--border);
+}
+
+.footer .credit span{
+    color:var(--orange);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .search-form{
+        width:90%;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .heading{
+        font-size: 2.5rem;
+    }
+
+    .footer{
+        text-align: center;
+    }
+
+    .footer .box-container .box .payment-img{
+        margin: 2rem auto;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-shopping-basket"></i> groco </a>
+
+    <nav class="navbar">
+        <a href="/">home</a>
+
+        <a href="#categories">categories</a>
+        <a href="contact">review</a>
+        <a href="predict">Predict</a>
+    </nav>
+</header>
+
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+
+
+
+<section class="categories" id="categories">
+
+    <h1 class="heading"> product <span>categories</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="https://i.im.ge/2022/06/19/uMX1vq.png" alt="">
+            <h3>Watermelon</h3>
+            <p>upto 45% off</p>
+        </div>
+
+        <div class="box">
+            <img src="https://i.im.ge/2022/06/19/uMXd6P.png" alt="">
+            <h3>Orange</h3>
+            <p>upto 45% off</p>
+
+        </div>
+
+        <div class="box">
+            <img src="https://i.im.ge/2022/06/19/uMXalf.png" alt="">
+            <h3>Butter Fruit</h3>
+            <p>upto 45% off</p>
+
+        </div>
+
+        <div class="box">
+            <img src="data:image/jpeg;base64,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" alt="">
+            <h3>Musambi</h3>
+            <p>upto 45% off</p>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

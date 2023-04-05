@@ -287,7 +287,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(../image/banner-bg.webp) no-repeat;
+    background: url(../static/image/banner-bg.webp) no-repeat;
     background-position: center;
     background-size: cover;
     padding-top: 17rem;
@@ -635,15 +635,6 @@ section{
 
 
 
-
-
-
-
-
-
-
-
-
 /* media queries  */
 
 @media (max-width:991px){
@@ -713,11 +704,12 @@ section{
     }
 
 }
-      </style>
+
+</style>
 
     </head>
 
-    <body>
+<body>
 
 
 <header class="header" style="background: linear-gradient(to right, #ffffff 0%, #ff3300 100%);">
@@ -766,8 +758,9 @@ section{
 	               <div style="width:500px; margin: auto; width: 50%;
 
   padding: 10px;" class="form-group">
+  <label  style="height:30px; font-size:14pt; font-weight:Bold; "  for="item_weight" class="ph-area">Enter Item Weight</label>
+
                  <input  style="height:50px; font-size:14pt; " type="text" name="item_weight" id="item_weight" class="form-control" required>
-                 <label  style="height:30px; font-size:14pt; font-weight:Bold; "  for="item_weight" class="ph-area">Enter Item Weight</label>
 
 
        <!--      <div class="form-group">
@@ -781,16 +774,19 @@ section{
                -->
 
 		   <div class="form-group">
+            <label style="height:30px; font-size:14pt; font-weight:Bold; " for="item_visibility" class="ph-area">Enter Item Visibility</label>
+
                <input style="height:50px; font-size:14pt; "  type="text" name="item_visibility" id="item_visibility" class="form-control" required>
-                 <label style="height:30px; font-size:14pt; font-weight:Bold; " for="item_visibility" class="ph-area">Enter Item Visibility</label>
 
                </div>
 
 
                <div class="form-group">
+                <label style="height:30px; font-size:14pt; font-weight:Bold; " for="item_visibility" class="ph-area">Item Type</label>
                  <select style="height:50px; font-size:14pt; "  class="form-control chosenn" name="item_type" required="required">
                </div>
-                   <option value="" selected>Item Type</option>
+               
+                   <option value="" selected>Select-Item-Type</option>
                    <option value="0">Baking Goods</option>
                    <option value="1">Breads</option>
                    <option value="2">Breakfast</option>
@@ -815,20 +811,21 @@ section{
 
 
                <div class="form-group">
+                <label style="height:30px; font-size:14pt; font-weight:Bold; " for="item_mrp" class="ph-area">Enter Item MRP</label>
                  <input style="height:50px; font-size:14pt; "  type="text" name="item_mrp" id="item_mrp" class="form-control" required>
-                 <label style="height:30px; font-size:14pt; font-weight:Bold; " for="item_mrp" class="ph-area">Enter Item MRP</label>
                </div>
 
               <div class="form-group">
+                <label style="height:30px; font-size:14pt; font-weight:Bold; " for="outlet_establishment_year" class="ph-area">Outlet Establishment Year (YYYY)</label>
                  <input style="height:50px; font-size:14pt; "  type="text" name="outlet_establishment_year" id="outlet_establishment_year" class="form-control" required>
-                 <label style="height:30px; font-size:14pt; font-weight:Bold; " for="outlet_establishment_year" class="ph-area">Outlet Establishment Year (YYYY)</label>
                </div>
 
 
 
                <div class="form-group">
+                <label style="height:30px; font-size:14pt; font-weight:Bold; " for="outlet_establishment_year" class="ph-area">Outlet Size</label>
                  <select style="height:50px; font-size:14pt; "  class="form-control chosenn" name="outlet_size" required="required">
-                   <option value="" selected>outlet_size</option>
+                   <option value="" selected>Select-Outlet-Size</option>
                    <option value="0">High</option>
                    <option value="1">Medium</option>
                    <option value="2">Small</option>
@@ -836,8 +833,9 @@ section{
                </div>
 
               <div class="form-group">
+                <label style="height:30px; font-size:14pt; font-weight:Bold; " for="outlet_establishment_year" class="ph-area">Outlet Location Type</label>
                  <select  style="height:50px; font-size:14pt; "  class="form-control chosenn" name="outlet_location_type" required="required">
-                   <option value="" selected>outlet_location_type</option>
+                   <option value="" selected>Select-outlet-location-type</option>
                    <option value="0">Tier 1</option>
                    <option value="1">Tier 2</option>
                    <option value="2">Tier 3</option>
@@ -845,8 +843,9 @@ section{
                </div>
 
                <div class="form-group">
+                <label style="height:30px; font-size:14pt; font-weight:Bold; " for="outlet_establishment_year" class="ph-area">Outlet Type</label>
                  <select style="height:50px; font-size:14pt; "  class="form-control chosenn" name="outlet_type" required="required">
-                   <option value="" selected>outlet_type</option>
+                   <option value="" selected>Select-Outlet-Type</option>
                    <option value="0">Grocery Store</option>
                    <option value="1">Supermarket Type1</option>
                    <option value="2">Supermarket Type2</option>

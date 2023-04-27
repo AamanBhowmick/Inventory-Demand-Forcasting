@@ -1,0 +1,63 @@
+{% extends "layout.html" %} {% block body %}
+
+<!-- About us start-->
+<main claas="main">
+  <br />
+
+  <h1>About Us</h1>
+  <p>
+    Our organization specializes in inventory demand forecasting, helping
+    businesses make informed decisions about their inventory management. With
+    years of experience in the field and cutting-edge technology, we provide
+    accurate and reliable demand forecasting services tailored to our clients'
+    unique needs and goals. By optimizing inventory levels, reducing stock-outs
+    and overstocks, and improving profitability, we help businesses succeed.
+    We're committed to professionalism, integrity, and excellence, and are
+    dedicated to providing the insights and tools our clients need to thrive.
+  </p>
+  <br />
+  <hr />
+  <br />
+  <div>
+    <h2>Our Team</h2>
+    <figure>
+      <img
+        class="rounded"
+        src="{{ url_for('static', filename='images/tt5.jpeg') }}"
+        alt="Aaman Bhowmick"
+      />
+      <!-- <p class="imgp">Aaman Bhowmick</p> -->
+    </figure>
+    <figure>
+      <img
+        class="rounded"
+        src="{{ url_for('static', filename='images/tt3.jpeg') }}"
+        alt="Nandana Nair"
+      />
+      <!-- <p class="imgp">Nandana Nair</p> -->
+    </figure>
+    <figure>
+      <img
+        class="rounded"
+        src="{{ url_for('static', filename='images/tt2.jpeg') }}"
+        alt="Prajwal Patil"
+      />
+      <!-- <p class="imgp">Prajwal Patil</p> -->
+    </figure>
+    <figure>
+      <img
+        class="rounded"
+        src="{{ url_for('static', filename='images/tt1.jpeg') }}"
+        alt="Sakshi Patil"
+      />
+      <!-- <p class="imgp">Sakshi Patil</p> -->
+    </figure>
+  </div>
+</main>
+<!-- About us end   -->
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/contact.css')}}"
+/>
+{% endblock %}

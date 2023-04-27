@@ -1,0 +1,29 @@
+{% extends 'layout.html' %} {% block css %} {% endblock %} {% block js %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function getTableId() {
+    // Extract the ID from the table
+    var table_id = $("#my-table1").attr("Product Code");
+    console.log(table_id);
+  }
+</script>
+{% endblock %} {% block body %}
+
+<div class="stats">
+  <h1>Dataset</h1>
+  {% for table1 in tables1 %} {{ table1|safe }} {% endfor %}
+
+  <h1>Actual</h1>
+  {% for table in tables3 %} {{ table|safe }} {% endfor %}
+</div>
+
+<script>
+  $(document).ready(function () {
+    getTableId();
+  });
+</script>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/report.css')}}"
+/>
+{% endblock %}

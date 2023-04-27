@@ -1,0 +1,124 @@
+{% extends "layout.html" %} {% block body %}
+<!-- Header image starts -->
+<section class="header-image" style="position: relative">
+  <img
+    src="{{ url_for('static', filename='images/head1.jpg') }}"
+    alt="Header image"
+  />
+</section>
+<br><br><br>  
+<!-- Header image ends -->
+
+<section id="butn">
+  <a class="butn" href="/upload">Get Started</a>
+
+</section>
+
+<!-- Features section starts -->
+<section id="features">
+  <div class="row">
+    <h1>Our Features</h1>
+  </div>
+  <div class="row">
+    <!-- Column One -->
+    <div class="column">
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <h3>User-Friendly Interface</h3>
+        <p>
+          Our system is designed with a simple and intuitive interface to make
+          managing your inventory a breeze. Spend less time managing your
+          inventory and more time growing your business with our intuitive
+          system.
+        </p>
+      </div>
+    </div>
+    <!-- Column Two -->
+    <div class="column">
+      <div class="card">
+        <div class="icon">
+          <i class="fas fa-store"></i>
+        </div>
+        <h3>Predictive Inventory Management</h3>
+        <p>
+          Our system uses advanced algorithms to analyze sales data and predict
+          future demand for your products. By accurately forecasting demand, you
+          can avoid stockouts and excess inventory, saving you time and money.
+        </p>
+      </div>
+    </div>
+    <!-- Column Three -->
+    <div class="column">
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <h3>Quick Support</h3>
+        <p>
+          Our dedicated support team is always available to assist you with any
+          questions or issues you may have. We're committed to providing you
+          with the best possible experience and ensuring your success with our
+          system.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<br />
+<br />
+<!-- Testimonials section starts -->
+<section id="testimonials">
+  <div class="row">
+    <h1>What Our Customers Say</h1>
+  </div>
+  <div class="row">
+    <!-- Column One -->
+    <div class="column">
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-comments-dollar"></i>
+        </div>
+        <h3>John Doe</h3>
+        <p>
+          "I have been using this inventory management system for a few months
+          now and it has made a huge difference in my business. The predictive
+          inventory management feature has saved me so much time and money."
+        </p>
+      </div>
+    </div>
+    <!-- Column Two -->
+    <div class="column">
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-comment-dots"></i>
+        </div>
+        <h3>Jane Smith</h3>
+        <p>
+          "The user interface is very intuitive and easy to use. I was able to
+          start using the system right away without any training.I no longer
+          have to worry about overstocking or running out of inventory. Highly
+          recommend!"
+        </p>
+      </div>
+    </div>
+    <!-- Column Three -->
+    <div class="column">
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-message"></i>
+        </div>
+        <h3>Bob Johnson</h3>
+        <p>
+          "As a small business owner, I was hesitant to invest in a demand
+          forecasting tool, but I am so glad I did.The support team was very
+          helpful in answering my questions and helping me set up the system. "
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css')}}" />
+
+{% endblock %}

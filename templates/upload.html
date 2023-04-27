@@ -1,0 +1,50 @@
+{% extends "layout.html" %} {% block body %}
+
+<br />
+<br />
+<!-- Upload csv  -->
+<section class="upload-csv">
+  <h2 id="introHeader">Upload your CSV File</h2>
+  <br />
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <fieldset id="inputBox">
+      <input
+        type="file"
+        name="file_name"
+        id="txtFileUpload"
+        accept=".csv"
+        onchange="getFileData()"
+        />
+      <input type="text" name="csv_name" id="csv" readonly hidden />
+      <input type="submit" value="Upload CSV" />
+    </fieldset>
+  </form>
+  <ul id="statOutPut" class="outPut">
+    <li>
+      Total number of rows: <span data-bind="text: countOfRows">null</span>
+    </li>
+    <li>
+      Total number of columns:
+      <span data-bind="text: countOfColumns">null</span>
+    </li>
+  </ul>
+  <br>
+  <br>
+  <br>
+</section>
+
+<!-- Upload csv ends  -->
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/upload.css')}}"
+  />
+<script src="{{ url_for('static', filename='js/upload.js')}}"></script>
+<script>
+  function getFileData() {
+    fake_path = document.getElementById("txtFileUpload").value;
+    var a = fake_path.split("\\").pop();
+    var b = a.split(" ").join("_");
+    document.getElementById("csv").value = b;
+  }
+</script>
+{% endblock %}

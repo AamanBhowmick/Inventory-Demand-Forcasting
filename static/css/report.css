@@ -1,0 +1,28 @@
+.stats {
+    width: 75%;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+    text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background-color: #f2f2f2;
+}

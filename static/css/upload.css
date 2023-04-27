@@ -1,0 +1,59 @@
+/* upload csv section  */
+
+.upload-csv {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#introHeader,
+#txtFileUpload {
+  font-family: "Roboto", sans-serif;
+  color: #19376D;
+  padding: 7px 0px 7px 9px;
+}
+#inputBox {
+  border: none;
+  outline: none;
+}
+
+.errorIntro {
+  visibility: visible;
+  color: red;
+}
+
+.errorIntro.hidden {
+  visibility: hidden;
+}
+
+.outPut li {
+  font-weight: bold;
+}
+
+#statOutPut li {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+ul li,
+input {
+  font-size: 17px;
+}
+
+fieldset {
+  padding: 15px 0;
+}
+
+ul li {
+  list-style-type: none;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: var(--darkcolor);
+}
+
+#statOutPut,
+#errorOutput {
+  padding: 0;
+}
+/* end csv section  */
+

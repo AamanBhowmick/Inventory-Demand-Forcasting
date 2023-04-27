@@ -1,4 +1,7 @@
-{% extends 'layout.html' %} {% block css %} {% endblock %} {% block js %}
+{% extends 'layout.html' %} {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/report.css')}}" />
+{% endblock %} {% block js %}
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   function getTableId() {
@@ -10,11 +13,24 @@
 {% endblock %} {% block body %}
 
 <div class="stats">
-  <h1>Dataset</h1>
-  {% for table1 in tables1 %} {{ table1|safe }} {% endfor %}
+  <h1 class="report_title">Overview of Uploaded Dataset</h1>
+  {% for table1 in tables1 %} {{ table1|safe }} {% endfor %} 
+  {% for table2 in tables2 %} {{ table2|safe }} {% endfor %}
 
-  <h1>Actual</h1>
-  {% for table in tables3 %} {{ table|safe }} {% endfor %}
+  <h1 class="report_title">Predictions for next 60 days</h1>
+  <div class="future_pred">
+    <div class="report_pred">
+      {% for table3 in tables3 %} {{ table3|safe }} {% endfor %}
+    </div>
+    <img class="report_img" src="{{ plot_path }}" alt="Visualization" />
+  </div>
+
+  <div class="more_details">
+    <form action="/details" method="POST">
+      <input name="p_code" type="text" hidden readonly value="{{p_code[0]}}">
+      <input type="submit" value="See More Details">
+    </form>
+  </div>
 </div>
 
 <script>
@@ -22,8 +38,5 @@
     getTableId();
   });
 </script>
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='css/report.css')}}"
-/>
+
 {% endblock %}

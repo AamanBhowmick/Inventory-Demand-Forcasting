@@ -22,6 +22,7 @@
       href="{{ url_for('static', filename='css/layout.css')}}"
       rel="stylesheet"
     />
+    {% block css %} {% endblock %}
   </head>
   <body>
     <!-- Nav bar starts  -->
@@ -114,3 +115,4 @@
     <script src="" async defer></script>
   </body>
 </html>
+

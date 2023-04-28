@@ -8,15 +8,11 @@
   <br />
   <form action="/upload" method="POST" enctype="multipart/form-data">
     <fieldset id="inputBox">
-      <input
-        type="file"
-        name="file_name"
-        id="txtFileUpload"
-        accept=".csv"
-        onchange="getFileData()"
-        />
+      <input type="file" name="file_name" id="txtFileUpload" accept=".csv" onchange="getFileData()" />
       <input type="text" name="csv_name" id="csv" readonly hidden />
-      <input type="submit" value="Upload CSV" />
+      <button type="submit" class="button" onclick="this.classList.toggle('button--loading')">
+        <span class="button__text">Upload CSV</span>
+      </button>
     </fieldset>
   </form>
   <ul id="statOutPut" class="outPut">
@@ -29,15 +25,14 @@
     </li>
   </ul>
   <br>
-  <br>
-  <br>
+  <p class="alert line1">NOTE:</p>
+  <p class="alert line2">The Uploaded dataset should contain "Date", "Sales Quantity", "Sales Revenue" and "Product
+    Code" columns compulsorily.</p>
+
 </section>
 
 <!-- Upload csv ends  -->
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='css/upload.css')}}"
-  />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css')}}" />
 <script src="{{ url_for('static', filename='js/upload.js')}}"></script>
 <script>
   function getFileData() {

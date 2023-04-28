@@ -19,11 +19,13 @@
           {% endfor %}
         </select>
       </div>
-      <input
+      <button
         type="submit"
         class="button"
-        value="Get Details"
-      />
+        onclick="this.classList.toggle('button--loading')"
+      >
+        <span class="button__text">Get Details</span>
+      </button>
     </div>
   </form>
   <p class="details_pred_quant">
@@ -34,6 +36,5 @@
   <p class="details_pred_graph">Predicted Sales of Next 60 days</p>
   <img class="report_details_img" src="{{ plot_path2 }}" alt="Visualization" />
 </div>
-
 
 {% endblock %}

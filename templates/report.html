@@ -28,7 +28,13 @@
   <div class="more_details">
     <form action="/details" method="POST">
       <input name="p_code" type="text" hidden readonly value="{{p_code[0]}}">
-      <input type="submit" value="See More Details">
+      <button
+        type="submit"
+        class="button"
+        onclick="this.classList.toggle('button--loading')"
+      >
+        <span class="button__text">Get More Details</span>
+      </button>
     </form>
   </div>
 </div>

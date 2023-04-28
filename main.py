@@ -148,13 +148,18 @@ def report():
         category_future_predictions_df_xgb = category_future_predictions_df_xgb.append(
             {'Product Code': category, 'Future Predicted Quantity': predicted_quantity_future}, ignore_index=True)
         
+        category_future_predictions_df_xgb_sorted = category_future_predictions_df_xgb.sort_values('Future Predicted Quantity', ascending=False)
+
+        # get the sorted 'Product Code' column
+        # product_code_sorted = category_future_predictions_df_xgb_sorted['Product Code']
+        
         plt.figure(figsize=(10, 8))
         plot = sns.barplot(data=category_future_predictions_df_xgb, x='Product Code', y='Future Predicted Quantity')
         plot.set_xticklabels(plot.get_xticklabels(), rotation=90)
         plot_path = 'static/images/plot.png'    
         plt.savefig(plot_path)
 
-    return render_template("report.html", tables1=[df.head(10).to_html(classes='data', table_id='my-table1')], tables2=[df.tail(10).to_html(classes='data', table_id='my-table1')], tables3=[category_future_predictions_df_xgb.to_html(classes='data')], plot_path = plot_path, p_code=p_code)
+    return render_template("report.html", tables1=[df.head(10).to_html(classes='data', table_id='my-table1')], tables2=[df.tail(10).to_html(classes='data', table_id='my-table1')], tables3=[category_future_predictions_df_xgb_sorted.to_html(classes='data')], plot_path = plot_path, p_code=p_code)
 
 @app.route('/details', methods=['GET', 'POST'])
 def report_details():

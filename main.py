@@ -96,6 +96,8 @@ def report():
     for i in categories:
         p_code.append(i)
     
+    length = len(p_code)
+    
     category_predictions_df_xgb = pd.DataFrame(
         columns=['Product Code', 'Actual Quantity', 'Predicted Quantity'])
     category_future_predictions_df_xgb = pd.DataFrame(
@@ -158,15 +160,25 @@ def report():
         plot.set_xticklabels(plot.get_xticklabels(), rotation=90)
         plot_path = 'static/images/plot.png'    
         plt.savefig(plot_path)
+        
+        plt.figure(figsize=(12, 6))
+        plot1 = sns.lineplot(data=grouped_df, x='Date', y='Actual')
+        
+        plt.figure
+        plot2 = sns.lineplot(x=future_results_df.index, y='Predicted', data=future_results_df, ax=plot1)
+        plot_path1 = 'static/images/report/plot'+ str(category) +'.png'   
+        plt.savefig(plot_path1)
 
-    return render_template("report.html", tables1=[df.head(10).to_html(classes='data', table_id='my-table1')], tables2=[df.tail(10).to_html(classes='data', table_id='my-table1')], tables3=[category_future_predictions_df_xgb_sorted.to_html(classes='data')], plot_path = plot_path, p_code=p_code)
+    return render_template("report.html", tables1=[df.head(10).to_html(classes='data', table_id='my-table1')], 
+                           tables2=[df.tail(10).to_html(classes='data', table_id='my-table1')], tables3=[category_future_predictions_df_xgb_sorted.to_html(classes='data')], 
+                           plot_path = plot_path, p_code=p_code, length=length)
 
 @app.route('/details', methods=['GET', 'POST'])
 def report_details():
     permissions = 0o700
     os.chmod(app.config['UPLOAD_FOLDER'], permissions)
     dataset_name = app.config['UPLOAD_FOLDER'] + app.config['CSV_NAME']
-    # dataset_name_f = open(dataset_name, 'w')
+    # dataset_name_f = open(dataset_name, 'w') 
     df = pd.read_csv(dataset_name)
 
     # value = df.loc[2, 'Product Code']

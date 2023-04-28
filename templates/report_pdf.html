@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Generate PDF</title>
+   <style>
+      .container {
+         position: fixed;
+         top: 20%;
+         left: 28%;
+         border-radius: 7px;
+      }
+      .card {
+         box-sizing: content-box;
+         width: 300px;
+         height: 400px;
+         padding: 30px;
+         border: 1px solid black;
+         font-style: sans-serif;
+         background-color: #f0f0f0;
+      }
+      h2 {
+         text-align: center;
+         color: #24650b;
+      }
+   </style>
+</head>
+<body>
+   <div class="container">
+      <button id="pdfButton"><b>Click here to Generate PDF</b></button>
+      <div class="card" id="generatePDF">
+         <h2>DemandWise</h2>
+         <ul>
+            <li>
+               <h4>Maximize profits with accurate demand predictions.</h4>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <script>
+      var button = document.getElementById("pdfButton");
+      var makepdf = document.getElementById("generatePDF");
+      button.addEventListener("click", function () {
+         var mywindow = window.open("", "PRINT", "height=600,width=600");
+         mywindow.document.write(makepdf.innerHTML);
+         mywindow.document.close();
+         mywindow.focus();
+         mywindow.print();
+         return true;
+      });
+   </script>
+</body>
+</html>

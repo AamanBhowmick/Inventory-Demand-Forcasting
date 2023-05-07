@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DemandWise</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link
+      href="{{ url_for('static', filename='css/layout.css')}}"
+      rel="stylesheet"
+    />
+    {% block css %} {% endblock %}
+  </head>
+  <body>
+    <!-- Nav bar starts  -->
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">DemandWise</div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/upload">Upload Dataset</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/about">About Us</a>
+      </div>
+    </div>
+
+    <!-- Nav-bar ends -->
+
+    {% block body %} {% endblock %}
+    <!-- Footer Starts  -->
+
+    <div class="footer">
+      <div class="inner-footer">
+        <!--  for company name and description -->
+        <div class="footer-items">
+          <h1><span class="logo">DemandWise</span></h1>
+          <br />
+          <p>Maximize profits with accurate demand predictions.</p>
+        </div>
+
+        <!--  for some other links -->
+        <div class="footer-items">
+          <h3>FAQ</h3>
+          <div class="border1"></div>
+          <!-- for the underline -->
+          <ul class="footer-ul">
+            <a
+              href="https://www.netsuite.com/portal/resource/articles/inventory-management/demand-forecasting.shtml"
+              target="_blank"
+              ><li>What is Demand Forecasting?</li></a
+            >
+            <a
+              href="https://3scsolution.com/insight/methods-of-demand-forecasting#:~:text=Statistical%20methods%20are%20a%20commonly,Average)%2C%20and%20Exponential%20smoothing."
+              target="_blank"
+              ><li>What are its different methods?</li></a
+            >
+            <a
+              href="https://www.itconvergence.com/blog/5-benefits-of-accurate-demand-forecasting-in-manufacturing"
+              target="_blank"
+              ><li>What are its Advantages?</li></a
+            >
+            <a
+              href="https://www.inventanalytics.com/blog/how-to-measure-demand-forecast-accuracy"
+              target="_blank"
+              ><li>How accurate is demand forecasting?</li></a
+            >
+          </ul>
+        </div>
+
+        <!--  for quick links  -->
+        <div class="footer-items">
+          <h3>Quick Links</h3>
+          <div class="border1"></div>
+          <!--for the underline -->
+          <ul class="footer-ul">
+            <a href="/"><li>Home</li></a>
+            <a href="/contact"><li>Contact</li></a>
+            <a href="/about"><li>About</li></a>
+          </ul>
+        </div>
+
+        <!--  for contact us info -->
+        <div class="footer-items">
+          <h3>Contact us</h3>
+          <div class="border1"></div>
+          <ul class="footer-ul">
+            <li>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>VESIT, Chembur
+            </li>
+            <li><i class="fa fa-phone" aria-hidden="true"></i>9876543210</li>
+            <li>
+              <i class="fa fa-envelope" aria-hidden="true"></i
+              >demandwise.predict@gmail.com
+            </li>
+          </ul>
+
+          <!--   for social links -->
+          <div class="social-media">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!--   Footer Bottom start  -->
+      <div class="footer-bottom">Copyright &copy; DemandWise 2023.</div>
+    </div>
+    <!-- Footer Ends  -->
+    <script src="" async defer></script>
+  </body>
+</html>

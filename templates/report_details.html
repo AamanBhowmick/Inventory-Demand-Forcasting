@@ -1,0 +1,40 @@
+{% extends 'layout.html' %} {% block css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/report.css')}}"
+/>
+{% endblock %} {% block body %}
+<div class="stats">
+  <h1 class="report_title">Overview of Uploaded Dataset</h1>
+  {% for table1 in tables1 %} {{ table1|safe }} {% endfor %}
+  <h1 class="report_title">Product: {{ category }}</h1>
+  <form action="/details" method="POST">
+    <div class="details_choose_pcode">
+      <div class="choose_pcode">
+        <label class="choose_title" for="cars">Choose the Product code:</label>
+        <select name="p_code" id="p_code">
+          <option value="none" selected disabled hidden>{{ category }}</option>
+          {% for pcode in p_code %}
+          <option value="{{pcode}}">{{pcode}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button
+        type="submit"
+        class="button"
+        onclick="this.classList.toggle('button--loading')"
+      >
+        <span class="button__text">Get Details</span>
+      </button>
+    </div>
+  </form>
+  <p class="details_pred_quant">
+    Predicted Quantity of Next 60 days: {{ predicted_quantity_future | int }}
+  </p>
+  <p class="details_pred_graph">Actual Sales over the period of time</p>
+  <img class="report_details_img" src="{{ plot_path3 }}" alt="Visualization" />
+  <p class="details_pred_graph">Predicted Sales of Next 60 days</p>
+  <img class="report_details_img" src="{{ plot_path2 }}" alt="Visualization" />
+</div>
+
+{% endblock %}

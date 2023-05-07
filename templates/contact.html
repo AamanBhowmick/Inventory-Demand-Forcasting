@@ -1,0 +1,70 @@
+{% extends "layout.html" %} {% block body %}
+<br />
+<!-- Contact us form start-->
+<div class="contact-form">
+  <h2 style="text-align: center">Contact Us</h2>
+  <form action="#" method="post">
+    <div class="form-row">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+    <div class="form-row">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    <div class="form-row">
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required />
+    </div>
+    <div class="form-row">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <br />
+    <div class="form-row">
+      <button type="submit">Send Message</button>
+    </div>
+  </form>
+</div>
+<br />
+<!-- Contact us form end-->
+
+<!-- About us start-->
+<!-- <main claas="main">
+        <br><hr><br>
+
+		<h1>About Us</h1>
+		<p>Our organization specializes in inventory demand forecasting, helping businesses make informed decisions about their inventory management. 
+            With years of experience in the field and cutting-edge technology, we provide accurate and reliable demand forecasting services 
+            tailored to our clients' unique needs and goals. By optimizing inventory levels, reducing stock-outs and overstocks, and 
+            improving profitability, we help businesses succeed. We're committed to professionalism, integrity, and excellence, and are 
+            dedicated to providing the insights and tools our clients need to thrive.
+        </p>
+<br><hr><br>
+        <div>
+            <h2>Our Team</h2>
+			<figure>
+				<img class="rounded" src="tt5.jpeg" alt="Aaman Bhowmick">
+				<p class="imgp">Aaman Bhowmick</p>
+			</figure>
+			<figure>
+				<img class="rounded" src="tt3.jpeg" alt="Nandana Nair">
+				<p class="imgp">Nandana Nair</p>
+			</figure>
+			<figure>
+				<img class="rounded" src="tt2.jpeg" alt="Prajwal Patil">
+				<p class="imgp">Prajwal Patil</p>
+			</figure>
+			<figure>
+				<img class="rounded" src="tt1.jpeg" alt="Sakshi Patil">
+				<p class="imgp">Sakshi Patil</p>
+			</figure>
+		</div>
+	</main> -->
+<!-- About us end   -->
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/contact.css')}}"
+/>
+
+{% endblock %}

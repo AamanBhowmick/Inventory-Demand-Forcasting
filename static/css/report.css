@@ -1,0 +1,168 @@
+.stats {
+    width: 85%;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#my-table1 {
+  width: 100%;
+}
+
+th,
+td {
+    text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.report_title{
+  margin-top: 40px;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--lightcolor);
+}
+
+.future_pred{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.report_pred{
+  width: 25%;
+}
+
+.report_img{
+  width: 70%;
+  height: 100%;
+}
+
+.more_details{
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.report_details_img{
+  width: 100%;
+}
+
+.details_pred_quant{
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.details_pred_graph{
+  margin-top: 50px;
+  font-size: 1.2em;
+  font-weight: 550;
+}
+
+.details_choose_pcode{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.choose_pcode{
+  display: flex;
+  align-items: center;
+}
+
+#p_code{
+  width: 30vh;
+  margin-left: 20px;
+  height: 100%;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.choose_title{
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+
+
+
+.button {
+  position: relative;
+  padding: 8px 16px;
+  background: var(--darkcolor);
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.button:active {
+  background: var(--lightcolor);
+}
+
+.button__text {
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.button--loading .button__text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.report_pdf_img{
+  width: 100%;
+}
+
+.choose_title.pdf{
+  margin-top: 25px;
+  margin-bottom: -27px;
+}
+
+.container{
+  text-align: center;
+  margin-bottom: 50px;
+}
